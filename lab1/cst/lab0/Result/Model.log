@@ -1,0 +1,196 @@
+Build version: 2018.0 Release from 2017-10-26 (change 556462)
+
+Starting adaptive port meshing.
+
+--------------------------------------------------------------------------------
+Mode calculation for port 1:
+
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+Using generalized port mode solver.
+
+--------------------------------------------------------------------------------
+  ------------------------------- F-Calc 10.3 --------------------------------
+  Port   Mode   Type        Z-Wave        Z-Wave-Sigma  Z-Line        F-Cutoff
+  1      1      TE          540           2.85e-006     ---           7.373
+  1      2      TE          371           6.46e-006     ---           14.69
+  1      3      TE          231           3.84e-006     ---           19.71
+  1      4      TE          212           5.57e-006     ---           21.05
+  1      5      TM          671           4.40e-005     ---           21.05
+  ----------------------------------------------------------------------------
+
+Pass 1 successfully completed. 
+Adaptive port meshing finished. 
+
+--------------------------------------------------------------------------------
+Creating parametric 1D results for Run ID 1
+
+--------------------------------------------------------------------------------
+Adaptation results were found. Adaptive port meshing skipped.
+
+--------------------------------------------------------------------------------
+
+Solver started at: 08:57 PM Monday, 24. March 2025
+
+  Module:  Time Domain: S-Parameter (Win 64)
+  Version: 2018.0 Release from 2017-10-26 (change 556462)
+
+
+
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+======================================================================
+ Solver cycle: 1
+======================================================================
+
+Stimulation at port 1 (mode 1) 
+
+
+
+--------------------------------------------------------------------------------
+Units settings: 
+
+  Dimensions: mm
+  Frequency:  GHz
+  Time:       ns
+
+--------------------------------------------------------------------------------
+Mesh statistics:
+
+   Hexahedral mesh type: PBA [accuracy enhancement is enabled]
+
+   Parallelization type: domain decomposition
+      Number of parallel working threads: 8
+      Number of calculation domains used: 16
+
+   Used point accuracy enhancement value: 75.00%.
+   PBA fill limit: 85.00% (inverse)
+   2025 Mar 24: 20:57:45: current system memory usage reached 70%
+   2025 Mar 24: 20:57:45: current system memory usage reached 75%
+   2025 Mar 24: 20:58:07: current system memory usage reached 80%
+   2025 Mar 24: 20:58:17: current system memory usage reached 80%
+   2025 Mar 24: 20:58:08: current system memory usage reached 80%
+
+
+
+--------------------------------------------------------------------------------
+Using generalized port mode solver.
+
+--------------------------------------------------------------------------------
+Boundary conditions: 
+
+  YZsymmetry: none
+  XZsymmetry: none
+  XYsymmetry: none
+
+  Xmin: expanded open, 4 Layer, depth 5.32869 mm
+  Xmax: expanded open, 4 Layer, depth 5.32869 mm
+
+  Ymin: expanded open, 4 Layer, depth 5.32869 mm
+  Ymax: expanded open, 4 Layer, depth 5.32869 mm
+
+  Zmin: expanded open, 4 Layer, depth 5.82121 mm
+  Zmax: expanded open, 4 Layer, depth 5.31603 mm
+
+  PML-Type: Convolution PML
+
+--------------------------------------------------------------------------------
+Frequency settings: 
+
+  Fmin:         8.2
+  Fmax:         12.4
+  Nfsteps(lin): 1001
+
+--------------------------------------------------------------------------------
+Waveguide boundaries:
+
+Port: 1
+
+  ------------------------------- F-Calc 10.3 --------------------------------
+  Port   Mode   Type        Z-Wave        Z-Wave-Sigma  Z-Line        F-Cutoff
+  1      1      TE          540           2.85e-006     ---           7.372
+  1      2      TE          371           6.19e-006     ---           14.69
+  1      3      TE          231           4.19e-006     ---           19.7
+  1      4      TE          212           5.47e-006     ---           21.04
+  1      5      TM          671           4.32e-005     ---           21.04
+  ----------------------------------------------------------------------------
+
+Field update statistics:
+
+  Number of components in total: 	45399150
+  Number of TST elements:		888
+
+Subcycling state:      Automatically deactivated
+
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Steady state energy criterion met, solver finished successfully.
+
+--------------------------------------------------------------------------------
+Frequency domain results normalized to default signal.
+
+
+--------------------------------------------------------------------------------
+
+  ----------------------------------------------------------------------------
+                      Peak memory used (kB)         Free physical memory (kB) 
+                                                    At begin     Minimum      
+  ----------------------------------------------------------------------------
+  Matrices calc.      1752254                       4226400      3354880      
+  Solver run total    824104                        5380100      3396860      
+  ----------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Solver Statistics:
+
+  Hardware:
+     Computer name:                 	LAPTOP-Q0M7ALED 
+
+     Number of CPU threads:             8
+     Hardware info:                  	Hardware Accelerator Device not activated
+
+  Number of mesh cells:             	7507200
+  Excitation duration:              	1.69264226e+000 ns 
+  Calculation time for excitation:  	60 	s
+  Number of calculated pulse widths:	1.70167 
+  Steady state accuracy limit:      	-30	dB 
+  Simulated number of time steps:   	3060 
+  Maximum number of time steps:     	35964 
+  Time step width:
+     without subcycles:             	9.41278342e-004 ns
+     used:                          	9.41278342e-004 ns
+
+  Matrix calculation time:          	122 	s
+  Solver setup time:                	9 	s
+  Solver loop time:                 	102 	s
+  Solver post processing time:      	0 	s
+                                    	------------
+  Total solver time:                	233 	s  ( = 0 h, 3 m, 53 s )
+
+--------------------------------------------------------------------------------
+
+  Adaptive port meshing time:       	0      	s
+  Total solver time (all cycles):   	234    	s  ( = 0 h, 3 m, 54 s )
+                                    	------------
+  Total simulation time:            	234    	s  ( = 0 h, 3 m, 54 s )
+
+--------------------------------------------------------------------------------
+Solver finished at: 09:01 PM Monday, 24. March 2025
+
+
+
+--------------------------------------------------------------------------------
+Creating parametric 1D results for Run ID 1
+
+--------------------------------------------------------------------------------
