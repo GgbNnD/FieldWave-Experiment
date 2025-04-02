@@ -1,5 +1,21 @@
 MWS Result File Version 20150206
-size=i:126
+size=i:132
+
+type=s:HIDDENITEM
+problemclass=s::8:1000
+visibility=s:hidden
+creation=s:internal
+lifetime=s:rebuild
+result=s:1
+files=s:e-field (f=10.3)_1,1.m3d
+
+type=s:HIDDENITEM
+problemclass=s::8:1000
+visibility=s:hidden
+creation=s:internal
+lifetime=s:rebuild
+result=s:1
+files=s:h-field (f=10.3)_1,1.m3d
 
 type=s:DATA_FOLDER
 problemclass=s::8:1000
@@ -1493,4 +1509,50 @@ result=s:1
 parametric=s:P
 treepath=s:1D Results\Reference Impedance\ZRef 1(5)
 files=s:ZRef1(5).sig
+
+type=s:FARFIELDPOLAR
+subtype=s:farfield polar linear
+problemclass=s::8:1000
+visibility=s:hidden
+creation=s:internal
+lifetime=s:solverstart
+result=s:0
+treepath=s:Farfields\farfield (f=10.3) [1(1)]\farfield (f=10.3) [1(1)]
+files=s:farfield (f=10.3) [1(1)].sig
+xlabel=s:Theta / Degree
+ylabel=s:dB
+title=s:Farfield Gain Abs (Phi=90)
+
+type=s:HFIELD3D
+problemclass=s::8:1000
+visibility=s:visible
+creation=s:internal
+lifetime=s:rebuild
+result=s:1
+treepath=s:2D/3D Results\H-Field\h-field (f=10.3) [1(1)]
+files=s:h-field (f=10.3)_1,1.m3d
+files=s:h-field (f=10.3)_1,1_m3d.rex
+ylabel=s:h-field (f=10.3) [1(1)]
+
+type=s:SURFACECURRENT
+problemclass=s::8:1000
+visibility=s:visible
+creation=s:internal
+lifetime=s:rebuild
+result=s:1
+treepath=s:2D/3D Results\Surface Current\surface current (f=10.3) [1(1)]
+files=s:h-field (f=10.3)_1,1.m3d
+files=s:h-field (f=10.3)_1,1_m3d_sct.rex
+ylabel=s:surface current (f=10.3) [1(1)]
+
+type=s:EFIELD3D
+problemclass=s::8:1000
+visibility=s:visible
+creation=s:internal
+lifetime=s:rebuild
+result=s:1
+treepath=s:2D/3D Results\E-Field\e-field (f=10.3) [1(1)]
+files=s:e-field (f=10.3)_1,1.m3d
+files=s:e-field (f=10.3)_1,1_m3d.rex
+ylabel=s:e-field (f=10.3) [1(1)]
 

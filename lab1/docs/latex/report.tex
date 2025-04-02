@@ -1,0 +1,318 @@
+\documentclass{zjureport}
+\special{dvipdfmx:config z 0} % 取消PDF压缩，加快速度，最终版本生成的时候最好把这句话注释掉
+
+% =============================================
+% Part 0 Edit the info
+% =============================================
+
+\major{信息工程}
+\name{黄鹤翔}
+\partner{}
+\title{本科实验报告}
+\stuid{3230106231}
+\college{信息与电子工程学院}
+\date{\today}
+\lab{东四227}
+\course{场波实验}
+\instructor{王子立}
+\grades{}
+\expname{CST仿真实验}
+\exptype{仿真型}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstset{
+ columns=fixed,       
+ numbers=left,                                        % 在左侧显示行号
+ numberstyle=\tiny\color{gray},                       % 设定行号格式
+ frame=none,                                          % 不显示背景边框
+ backgroundcolor=\color[RGB]{245,245,244},            % 设定背景颜色
+ keywordstyle=\color[RGB]{40,40,255},                 % 设定关键字颜色
+ numberstyle=\footnotesize\color{darkgray},           
+ commentstyle=\it\color[RGB]{0,96,96},                % 设置代码注释的格式
+ stringstyle=\rmfamily\slshape\color[RGB]{128,0,0},   % 设置字符串格式
+ showstringspaces=false,                              % 不显示字符串中的空格
+ breaklines=true,                                     % 对过长的代码自动换行
+ language=verilog,                                     % 设置语言
+}
+
+
+\begin{document}
+% =============================================
+% Part 1 Header
+% =============================================
+\makecover
+
+% \makecontent
+
+\makeheader
+% =============================================
+% Part 2 Main document
+% =============================================
+
+% \begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+%     \centering %图片居中
+%     \includegraphics[width=0.8\textwidth]{fig1-SR830structure.jpg}
+%     \caption{锁相放大器SR830结构图} %最终文档中希望显示的图片标题
+% \end{figure}
+\section{实验目的}
+\begin{itemize}
+  \item 熟悉CST软件的使用方法
+  \item 了解矩形波导馈电的角锥喇叭天线的结构、方向性等
+  \item 掌握矩形波导馈电角锥喇叭天线的理论分析
+  \item 通过矩形波导馈电角锥喇叭天线CST仿真观察方向图和喇叭中电场等情况
+\end{itemize}
+
+\section{实验内容}
+角锥喇叭天线尺寸数据如下：$D_H = 80mm,D_E = 38mm,L = 80mm$，波导尺寸
+$a = 22.86mm,b = 10.16mm,Lambda = 29.1mm$，铜壁厚$t = 1mm$，用CST软件
+建模并仿真，观察方向图和喇叭中电场等情况。
+
+\section{实验原理}
+\begin{center}
+  \includegraphics[width = 0.8\textwidth]{原理1.png}
+  \includegraphics[width = 0.8\textwidth]{原理2.png}
+  \includegraphics[width = 0.8\textwidth]{原理3.png}
+  \includegraphics[width = 0.8\textwidth]{原理4.png}
+\end{center}
+
+\section{实验过程}
+\subsection{建模}
+\subsubsection{创建长方体}
+创建的长方体参数与效果图如下图所示：\par
+\begin{figure}[H]
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{长方体创建2.png}
+    \caption{长方体参数}
+  \end{minipage}
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{长方体创建1.png}
+    \caption{长方体效果图}
+  \end{minipage}
+\end{figure}
+
+\subsubsection{创建矩形}
+创建的矩形参数与效果图如下图所示：\par
+\begin{figure}[H]
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{矩形创建1.png}
+    \caption{矩形参数}
+  \end{minipage}
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{矩形创建2.png}
+    \caption{矩形效果图}
+  \end{minipage}
+\end{figure}
+
+\subsubsection{矩形平移}
+矩形平移参数与效果图如下图所示：\par
+\begin{figure}[H]
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{矩形平移1.png}
+    \caption{矩形平移参数}
+  \end{minipage}
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{矩形平移2.png}
+    \caption{矩形平移效果图}
+  \end{minipage}
+\end{figure}
+
+\subsubsection{侧壁创建与合并}
+侧壁创建与合并的过程如下图所示：\par
+\begin{figure}[H]
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{侧壁创建.png}
+    \caption{侧壁创建}
+  \end{minipage}
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{整体合并.png}
+    \caption{整体合并}
+  \end{minipage}
+\end{figure}
+
+\subsubsection{掏空}
+掏空的过程与效果图如下图所示：\par
+\begin{figure}[H]
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{掏空1.png}
+    \caption{掏空过程}
+  \end{minipage}
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{掏空2.png}
+    \caption{掏空参数}
+  \end{minipage}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{掏空3.png}
+  \caption{掏空效果图}
+\end{figure}
+
+\subsection{仿真}
+\subsubsection{仿真设置}
+分别设置仿真频率、仿真背景与仿真边界条件
+\begin{figure}[H]
+  \begin{minipage}{0.32\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{仿真设置1.png}
+    \caption{仿真频率设置} 
+  \end{minipage}
+  \begin{minipage}{0.32\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{仿真设置2.png}
+    \caption{仿真背景设置}
+  \end{minipage}
+  \begin{minipage}{0.32\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{仿真设置3.png}
+    \caption{仿真边界条件设置}
+  \end{minipage}
+\end{figure}
+
+\subsubsection{激励源与监视器设置}
+\begin{figure}[H]
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{激励源设置.png}
+    \caption{激励源设置}
+  \end{minipage}
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{监视器设置.png}
+    \caption{监视器设置}
+  \end{minipage}
+\end{figure}
+
+\subsubsection{模式分析}
+首先只计算端口模式不执行整个时域仿真，预先了解模式分布\par
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{仿真1.png}
+  \caption{模式分布预了解}
+\end{figure}
+查看模式仿真分析报告，发现只有模式一的频率低于最高频率12.4GHz\par
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{仿真2.png}
+  \caption{模式分析报告}
+\end{figure}
+选择端口1与模式1进行完整仿真
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{仿真3.png}
+  \caption{端口1与模式1仿真}
+\end{figure}
+
+\section{实验结果与分析}
+\subsection{喇叭天线S11}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{s11.png}
+  \caption{喇叭天线S11}
+\end{figure}
+由$S_{11}$曲线可以看出天线输入端口的反射系数在
+工作频率8.2GHz到12.4GHz之间小于-20dB，说明天线
+在工作频段内能较好地工作
+
+\subsection{驻波比特性曲线}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{驻波比.png}
+  \caption{驻波比特性曲线}
+\end{figure}
+由驻波比特性曲线可以看出天线在频率8.2GHz到8.5GHz之间
+反射系数较小，能够较好地工作，在其他频率段反射系数基本大于1.1，
+工作状态不是很好
+
+\subsection{方向图}
+\begin{figure}[H]
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{方向图1.png}
+    \caption{3D方向图}
+  \end{minipage}
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{方向图2.png}
+    \caption{2D方向图}
+  \end{minipage}
+\end{figure}
+
+\subsection{增益图}
+\begin{figure}[H]
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{增益1.png}
+    \caption{3D增益图}
+  \end{minipage}
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{增益2.png}
+    \caption{2D增益图}
+  \end{minipage}
+\end{figure}
+
+从仿真结果来看，该矩形波导馈电地角锥喇叭天线
+地主瓣方向为$\varphi = 0,\theta = 0$，主瓣宽度为
+$20.9^{\circ}$，主瓣的最大增益为$15.6dB$。\par
+\subsubsection{理论增益计算}
+\begin{align*}
+  R_1 = \frac{L *D_H}{D_H-a} = 112.01mm\\
+  R_2 = \frac{L *D_E}{D_E-b} = 200.79mm\\
+  L_H = \sqrt{R_1^2 + \frac{D_H^2}{4}} = 118.94mm\\
+  L_E = \sqrt{R_2^2 + \frac{D_E^2}{4}} = 201.69mm\\
+  A = D_H*D_E = 3040mm^2\\
+  S_H = \frac{A^2}{8\lambda L_H} = 333.76mm^2\\
+  S_E = \frac{A^2}{8\lambda L_E} = 196.82mm^2\\
+  \alpha = 8S_H = 2670.08mm^2\\
+  \beta = 8S_E = 1574.56mm^2\\
+\end{align*}
+读表可得$\Delta G_H = 0.3292,\Delta G_E = 0.6960$\\
+可以计算得到天线增益为：
+\begin{align*}
+  G &= 10.8+10\lg(\frac{D_H*D_E}{\lambda^2}) - \Delta G_H - \Delta G_E\\
+    &= 10.8 + 10\lg(\frac{80*38}{29.1^2}) - 0.3292 - 0.6960\\
+    &= 15.326 dB\\
+\end{align*}
+理论值与仿真值大致相同
+
+\subsection{电场情况}
+\begin{figure}[H]
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{电场1.png}
+    \caption{电场分布图1}
+  \end{minipage}
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{电场2.png}
+    \caption{电场分布图2}
+  \end{minipage}
+\end{figure}
+从图中可以看出，两边的电场关于yz平面对称，
+且离平面越远电场越弱；波导电场最强，在喇叭中传播
+越远电场越弱；喇叭天线内电场强，外部电场弱。
+
+\section{实验结论}
+从仿真结果来看，该矩形波导馈电地角锥喇叭天线
+地主瓣方向为$\varphi = 0,\theta = 0$，主瓣宽度为
+$20.9^{\circ}$，主瓣的最大增益为$15.6dB$，与理论结果接近。
+同时天线输入端口的反射系数在
+工作频率8.2GHz到12.4GHz之间小于-20dB，说明天线
+在工作频段内能较好地工作。
+
+\section{收获与体会}
+本次实验通过CST软件对矩形波导馈电的角锥喇叭天线进行建模与仿真，
+让我学会了CST的基本操作，熟悉了仿真的基本流程，相信对我之后的课程都会很有帮助。
+\end{document}

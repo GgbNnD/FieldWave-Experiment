@@ -1,0 +1,159 @@
+\documentclass{zjureport}
+\special{dvipdfmx:config z 0} % 取消PDF压缩，加快速度，最终版本生成的时候最好把这句话注释掉
+
+% =============================================
+% Part 0 Edit the info
+% =============================================
+
+\major{信息工程}
+\name{黄鹤翔}
+\partner{}
+\title{本科实验报告}
+\stuid{3230106231}
+\college{信息与电子工程学院}
+\date{2025-3-26}
+\lab{东四224}
+\course{场波实验}
+\instructor{王子立}
+\grades{}
+\expname{微带传输线负载特性分析}
+\exptype{探究型}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstset{
+ columns=fixed,       
+ numbers=left,                                        % 在左侧显示行号
+ numberstyle=\tiny\color{gray},                       % 设定行号格式
+ frame=none,                                          % 不显示背景边框
+ backgroundcolor=\color[RGB]{245,245,244},            % 设定背景颜色
+ keywordstyle=\color[RGB]{40,40,255},                 % 设定关键字颜色
+ numberstyle=\footnotesize\color{darkgray},           
+ commentstyle=\it\color[RGB]{0,96,96},                % 设置代码注释的格式
+ stringstyle=\rmfamily\slshape\color[RGB]{128,0,0},   % 设置字符串格式
+ showstringspaces=false,                              % 不显示字符串中的空格
+ breaklines=true,                                     % 对过长的代码自动换行
+ language=verilog,                                     % 设置语言
+}
+
+
+\begin{document}
+% =============================================
+% Part 1 Header
+% =============================================
+\makecover
+
+% \makecontent
+
+\makeheader
+% =============================================
+% Part 2 Main document
+% =============================================
+
+% \begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+%     \centering %图片居中
+%     \includegraphics[width=0.8\textwidth]{fig1-SR830structure.jpg}
+%     \caption{锁相放大器SR830结构图} %最终文档中希望显示的图片标题
+% \end{figure}
+
+\section{实验目的}
+\begin{itemize}
+  \item 了解基本传输线、微带线的特性
+  \item 熟悉网络参量测量，掌握矢网网络分析仪的基本使用方法
+\end{itemize}
+
+\section{实验原理}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{原理图.png}
+  \caption{微带线负载特性矢网网络分析原理图} 
+\end{figure}
+
+考虑一段特性阻抗为$Z_0$的传输线，一端接信号源，另一端则接上负载。
+假设此传输线无耗，且传输线$\gamma = j \beta$，则传输线上电压及电流可用
+下列二式表示：
+\begin{align*}
+  U(z) = U^+e^{-\beta z} + U^-e^{\beta z} \\
+  I(z) = I^+e^{-\beta z} - I^-e^{\beta z}
+\end{align*}
+
+\subsection{负载端(z = 0)处情况}
+电压及电流为\par
+\begin{align*}
+  U = U_L = U^+ + U^- \\
+  I = I_L = I^+ - I^-
+\end{align*}
+而$Z_0I^+ = U^+,Z_0I^- = U^-$，公式可改写成\par
+\begin{align*}
+  I_L = \frac{1}{Z_0}(U^+-U^-)
+\end{align*}
+可得负载阻抗为\par
+\begin{align*}
+  Z_L = \frac{U_L}{I_L} = Z_0\frac{U^+ + U^-}{U^+ - U^-}
+\end{align*}
+定义归一化负载阻抗为\par
+\begin{align*}
+  z_L = Z_L = \frac{Z_L}{Z_0} = \frac{1+\Gamma_L}{1-\Gamma_L}
+\end{align*}
+其中定义$\Gamma_L$为负载端的电压反射系数\par
+\begin{align*}
+  \Gamma_L = \frac{U^-}{U^+} = \frac{Z_L - Z_0}{Z_L + Z_0} = |\Gamma_L|e^{j\phi_L}
+\end{align*}
+当$Z_L = Z_0$或为无限长传输线时，$\Gamma_L = 0$，无反射波，是行波状态或匹配状态。\par
+当$Z_L$为纯电抗元件或处于开路或者短路状态时，$|\Gamma_L| = 1$，全反射，是驻波状态。\par
+当$Z_L$为其他值时，$|\Gamma_L| <= 1$，为行波驻波状态。\par
+线上任意点的反射系数为\par
+\begin{align*}
+  \Gamma_L = |\Gamma_L|e^{j\phi_L-j2\beta z}
+\end{align*}
+定义驻波比VSWR和回波损耗RL为\par
+\begin{align*}
+  VSWR = \frac{1+|\Gamma_L|}{1-|\Gamma_L|}\\
+  RL = -20\log_{10}|\Gamma_L|
+\end{align*}
+
+\subsection{输入端(z = -l)处情况}
+反射系数$\Gamma(z)$应改成\par
+\begin{align*}
+  \Gamma(L) = \frac{U^-e^{-j\beta_L}}{U^+e^{j\phi\beta_L}} = \frac{U^-}{U^+}e^{-j2\beta_L} = \Gamma_L e^{-j2\beta_L}
+\end{align*}
+输入阻抗为\par
+\begin{align*}
+  Z_{in} = Z_0\frac{Z_L+jZ_0\tan(\beta L)}{Z_0+jZ_L\tan(\beta L)}
+\end{align*}
+由上式可知\par
+\begin{itemize}
+  \item 当$L \rightarrow \infty$时，$Z_{in} \rightarrow Z_0$
+  \item 当$L = \frac{\lambda}{2}$时，$Z_{in} = Z_L$
+  \item 当$L = \frac{\lambda}{4}$时，$Z_{in} = \frac{Z_0^2}{Z_L}$
+\end{itemize}
+
+\section{实验内容}
+\begin{itemize}
+  \item 了解矢量网络分析仪的原理和使用方法
+  \item 用矢量网络分析仪分别测量微带开路传输线模块的反射特性，
+  并引入电阻、电容和电感负载测量并分析在不同负载情况下的反射特性
+\end{itemize}
+
+\section{实验过程与记录}
+\subsection{微带开路传输线模块}
+\subsubsection{校准}
+连接好射频电缆线后，按【校准】键，选择[机械校准],[单端口(反射)]，
+分别接上开路器、断路器、匹配负载，最后按下[完成单端口]键，完成校准，校准
+后接匹配负载的史密斯圆图如下图所示：\par
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth,angle = 180]{微带传输线校准.jpg}
+  \caption{校准后的史密斯圆图}
+\end{figure}
+\subsubsection{模块上不加负载}
+
+\section{天线测量}
+取下射频电缆线，重新校准后接上天线，得到的史密斯圆图如下图所示：\par
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth,angle = 180]{天线.jpg}
+  \caption{天线测量的史密斯圆图}
+\end{figure}
+\end{document}

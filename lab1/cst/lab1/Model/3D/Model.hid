@@ -9,9 +9,7 @@
 [start]command
 [end]command
 [start]content
-
 Solid.Delete "component1:brick1"
-
 [end]content
 [start]recover_picks
 1
@@ -25,9 +23,7 @@ Solid.Delete "component1:brick1"
 6
 [end]block_index
 [start]command
-
 '@ transform: translate component1:solid1
-
 [end]command
 [start]content
 With Transform 
@@ -42,7 +38,6 @@ With Transform
      .MultipleSelection "False" 
      .Transform "Shape", "Translate" 
 End With 
-
 [end]content
 [start]recover_picks
 1
@@ -131,7 +126,6 @@ End With
 18
 [end]block_index
 [start]command
-
 '@ define port: 1
  (undo)
 [end]command

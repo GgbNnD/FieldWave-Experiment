@@ -80,3 +80,25 @@ mon_fmax: ""
 mon_nfSteps: ""
 *** endmonitor
 
+*** newmonitor
+monname: "h-field (f=10.3)"
+nmonfrequencies: 1
+monfrequencies: "10.300000000000001" 
+montype: 1
+mondomain: 1
+mon_fmin: ""
+mon_fmax: ""
+mon_nfSteps: ""
+*** endmonitor
+
+*** newmonitor
+monname: "e-field (f=10.3)"
+nmonfrequencies: 1
+monfrequencies: "10.300000000000001" 
+montype: 0
+mondomain: 1
+mon_fmin: ""
+mon_fmax: ""
+mon_nfSteps: ""
+*** endmonitor
+
