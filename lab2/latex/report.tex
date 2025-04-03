@@ -147,13 +147,141 @@
   \includegraphics[width=0.8\textwidth,angle = 180]{微带传输线校准.jpg}
   \caption{校准后的史密斯圆图}
 \end{figure}
-\subsubsection{模块上不加负载}
 
-\section{天线测量}
+\subsubsection{模块上不加负载}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth,angle = 180]{传输线模块开路.jpg}
+  \caption{模块开路}
+\end{figure}
+移动光标至2.5GHz处，光标接近但略微偏离开路点，可能
+是因为微带线的开路段并非理想开路，实际存在边缘场效应，
+导致等效电长度略长于物理长度，引起误差。\par
+
+\subsubsection{模块接匹配电阻}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth,angle = 180]{传输线模块49.9电阻.jpg}
+  \caption{模块匹配}
+\end{figure}
+曲线在匹配点附近\par
+
+\subsubsection{模块接0$\Omega$电阻}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth,angle = 180]{传输线模块短路.jpg}
+  \caption{模块接0$\Omega$电阻}  
+\end{figure}
+理论上短路时曲线应该在左端点附近，但实验测得曲线在右端点附近，
+可能是在接入0$\Omega$电阻时，没有让电阻与模块完全接触，
+造成了类似断路的现象，导致实验值与理论值相差很大。\par
+
+\subsubsection{模块接电容}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth,angle = 180]{传输线模块电容.jpg}
+  \caption{模块接电容}
+\end{figure}
+可以看到曲线大部分落在下半圆内，呈现容性特征。
+
+\subsubsection{模块接电感}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth,angle = 180]{传输线模块电感.jpg}
+  \caption{模块接电感}
+\end{figure}
+可以看到曲线大部分落在上半圆内，呈现感性特征。
+
+\subsection{天线}
 取下射频电缆线，重新校准后接上天线，得到的史密斯圆图如下图所示：\par
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth,angle = 180]{天线.jpg}
   \caption{天线测量的史密斯圆图}
+\end{figure}
+
+\subsection{微带耦合滤波器}
+
+\subsubsection{基础参数测量}
+中心频率为2.3675GHz，3dB带宽为0.161GHz，带内波纹约为1dB，
+阻带衰减36.484dB\par
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth,angle = 180]{中心频率与带宽.jpg}
+\end{figure}
+观察光标2可得中心频率为2.3675GHz，观察光标6、7可得3dB带宽为0.161GHz，
+可大致估计带内波纹为0.2dB\par
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth,angle = 180]{阻带衰减.jpg}
+\end{figure}
+观察光标6可得阻带衰减为36.484dB。
+
+\subsubsection{S参数与相位}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth,angle = 180]{无干扰swr.jpg}
+  \caption{$S_{21}$}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth,angle = 180]{相位.jpg}
+  \caption{相位}
+\end{figure}
+
+\subsubsection{受到干扰的变化}
+\begin{figure}[H]
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth,angle = 180]{无干扰特性.jpg}
+    \caption{干扰前特性曲线}
+  \end{minipage}
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth,angle = 180]{干扰特性.jpg}
+    \caption{干扰后特性曲线}
+  \end{minipage}
+  \caption{特性曲线变化}
+\end{figure}
+
+\begin{figure}[H]
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth,angle = 180]{无干扰swr.jpg}
+    \caption{干扰前驻波比}
+  \end{minipage}
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth,angle = 180]{干扰swr.jpg}
+    \caption{干扰后驻波比}
+  \end{minipage}
+  \caption{驻波比变化}
+\end{figure}
+
+\begin{figure}[H]
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth,angle = 180]{无干扰圆图.jpg}
+    \caption{干扰前圆图}
+  \end{minipage}
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth,angle = 180]{干扰圆图.jpg}
+    \caption{干扰后圆图}
+  \end{minipage}
+  \caption{圆图变化}
+\end{figure}
+
+由上述数据可知，微带滤波器为带通滤波器，中心频率2.3675GHz，3dB截止
+频率为2.448GHz和2.287GHz，带宽仅为0.161GHz，带宽较小。\\
+由$|S_{21}|$与$\omega$的关系图可以看到，
+滤波器在很大一部分$\omega$内反射系数均高于1.5，反射损耗较大；
+由$S_{21}$的相位图可知，滤波器的线性性较好。\\
+综上所述，微带滤波器的性能一般。
+
+\subsubsection{输入阻抗与反射系数}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth,angle = 180]{无干扰圆图.jpg}
 \end{figure}
 \end{document}

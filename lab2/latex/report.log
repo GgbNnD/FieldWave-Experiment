@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.7.15)  2 APR 2025 15:33
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.7.15)  3 APR 2025 20:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -699,21 +699,62 @@ File: figures/原理图.png Graphic file (type bmp)
 [1] [2]
 File: figures/微带传输线校准.jpg Graphic file (type bmp)
 <figures/微带传输线校准.jpg>
+File: figures/传输线模块开路.jpg Graphic file (type bmp)
+<figures/传输线模块开路.jpg>
+ [3]
+File: figures/传输线模块49.9电阻.jpg Graphic file (type bmp)
+<figures/传输线模块49.9电阻.jpg>
+ [4]
+File: figures/传输线模块短路.jpg Graphic file (type bmp)
+<figures/传输线模块短路.jpg>
+ [5]
+File: figures/传输线模块电容.jpg Graphic file (type bmp)
+<figures/传输线模块电容.jpg>
+ [6]
+File: figures/传输线模块电感.jpg Graphic file (type bmp)
+<figures/传输线模块电感.jpg>
+ [7]
 File: figures/天线.jpg Graphic file (type bmp)
 <figures/天线.jpg>
- [3] [4] (./report.aux)
+ [8]
+File: figures/中心频率与带宽.jpg Graphic file (type bmp)
+<figures/中心频率与带宽.jpg>
+ [9]
+File: figures/阻带衰减.jpg Graphic file (type bmp)
+<figures/阻带衰减.jpg>
+File: figures/无干扰swr.jpg Graphic file (type bmp)
+<figures/无干扰swr.jpg>
+File: figures/相位.jpg Graphic file (type bmp)
+<figures/相位.jpg>
+ [10] [11]
+File: figures/无干扰特性.jpg Graphic file (type bmp)
+<figures/无干扰特性.jpg>
+File: figures/干扰特性.jpg Graphic file (type bmp)
+<figures/干扰特性.jpg>
+File: figures/无干扰swr.jpg Graphic file (type bmp)
+<figures/无干扰swr.jpg>
+File: figures/干扰swr.jpg Graphic file (type bmp)
+<figures/干扰swr.jpg>
+ [12]
+File: figures/无干扰圆图.jpg Graphic file (type bmp)
+<figures/无干扰圆图.jpg>
+File: figures/干扰圆图.jpg Graphic file (type bmp)
+<figures/干扰圆图.jpg>
+File: figures/无干扰圆图.jpg Graphic file (type bmp)
+<figures/无干扰圆图.jpg>
+ [13] [14] (./report.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 11510 strings out of 476720
- 267963 string characters out of 5801444
+ 11676 strings out of 476720
+ 271934 string characters out of 5801444
  1935842 words of memory out of 5000000
- 33354 multiletter control sequences out of 15000+600000
+ 33506 multiletter control sequences out of 15000+600000
  560700 words of font info for 92 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  89i,14n,100p,356b,417s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on report.pdf (5 pages).
+Output written on report.pdf (15 pages).
